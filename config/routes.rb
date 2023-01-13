@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post 'api/v1/auth/login', to: 'authentication#login'
 end
