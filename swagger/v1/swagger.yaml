@@ -5,6 +5,31 @@ info:
   description: Sample app created for Medium article
   version: v1
 paths:
+  "/api/v1/auth/login":
+    post:
+      summary: Valid user log in
+      tags:
+      - Log in
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+        description: Valid user log in
   "/api/v1/users":
     get:
       summary: List users
@@ -22,6 +47,8 @@ paths:
                   id:
                     type: integer
                   email:
+                    type: string
+                  password_digest:
                     type: string
                   description:
                     type: string
@@ -46,6 +73,8 @@ paths:
                     type: integer
                   email:
                     type: string
+                  password_digest:
+                    type: string
                   description:
                     type: string
                   created_at:
@@ -62,15 +91,19 @@ paths:
               properties:
                 email:
                   type: string
+                password:
+                  type: string
                 description:
                   type: string
               required:
               - email
-              - description
+              - password
         description: Create a user
   "/api/v1/users/{id}":
     get:
       summary: Show a user
+      security:
+      - ApiKeyAuth: []
       tags:
       - Users
       description: Show a user
@@ -93,6 +126,8 @@ paths:
                     type: integer
                   email:
                     type: string
+                  password_digest:
+                    type: string
                   description:
                     type: string
                   created_at:
@@ -105,6 +140,8 @@ paths:
           description: Not Found
     put:
       summary: Updates a user
+      security:
+      - ApiKeyAuth: []
       tags:
       - Users
       description: Updates a user
@@ -127,6 +164,8 @@ paths:
                     type: integer
                   email:
                     type: string
+                  password_digest:
+                    type: string
                   description:
                     type: string
                   created_at:
@@ -145,14 +184,15 @@ paths:
               properties:
                 email:
                   type: string
+                password:
+                  type: string
                 description:
                   type: string
-              required:
-              - email
-              - description
         description: Updates a user
     delete:
       summary: Delete a user
+      security:
+      - ApiKeyAuth: []
       tags:
       - Users
       description: Delete a user
@@ -173,3 +213,9 @@ servers:
   variables:
     defaultHost:
       default: localhost:3000
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
