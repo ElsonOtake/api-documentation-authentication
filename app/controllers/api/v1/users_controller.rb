@@ -46,7 +46,7 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a list of trusted JSON parameters through.
     def json_params
-      allowed_data = %(email description).freeze
+      allowed_data = %(email password description).freeze
       json_payload.select { |allow| allowed_data.include?(allow) }
     end
 end
