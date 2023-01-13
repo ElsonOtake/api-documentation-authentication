@@ -36,7 +36,7 @@ describe 'Users' do
             email: { type: :string },
             description: { type: :string }
           },
-          required: %w[email description]
+          required: %w[email]
       }
 
       response '201', 'OK' do
@@ -112,8 +112,7 @@ describe 'Users' do
           properties: { 
             email: { type: :string },
             description: { type: :string }
-          },
-          required: %w[email description]
+          }
         }
       response '200', 'OK' do
         schema type: :object,
