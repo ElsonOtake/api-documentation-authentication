@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  before_action :authorize_request, only: %i[ show update destroy ]
   before_action :set_user, only: %i[ show update destroy ]
 
   # GET /api/v1/users
