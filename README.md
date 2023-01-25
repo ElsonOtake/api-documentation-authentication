@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 API Documentation <a name="about-project"></a>
+# 📖 API Documentation Authentication <a name="about-project"></a>
 
-**API documentation** is an information-sharing project related to API documentation. The data from this application supports the [article created on Medium](https://medium.com/@elsonotake/e1ba758781e4) with API documentation tips.
+**API documentation authentication** is an information-sharing project related to API documentation. The data from this application supports the [article created on Medium](https://medium.com/@elsonotake/e1ba758781e4) with API documentation tips.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -38,6 +38,8 @@
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
     <li><a href="https://github.com/rspec/rspec-rails">RSpec Rails</a></li>
     <li><a href="https://github.com/rswag/rswag">Rswag</a></li>
+    <li><a href="https://jwt.io/">JWT</a></li>
+    <li><a href="https://github.com/bcrypt-ruby/bcrypt-ruby">bcrypt</a></li>
   </ul>
 </details>
 
@@ -52,9 +54,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Basic API application**
-- **CRUD**
-- **Documentation using Rswagger**
+- **Authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,20 +86,20 @@ Clone this repository to your desired folder:
 
 using HTTPS:
 ```sh
-  git clone https://github.com/ElsonOtake/api-documentation.git
-  cd api-documentation
+  git clone https://github.com/ElsonOtake/api-documentation-authentication.git
+  cd api-documentation-authentication
 ```
 
 using an SSH key:
 ```sh
-  git clone git@github.com:ElsonOtake/api-documentation.git
-  cd api-documentation
+  https://github.com/ElsonOtake/api-documentation-authentication.git
+  cd api-documentation-authentication
 ```
 
 using GitHub CLI:
 ```sh
-  git clone gh repo clone ElsonOtake/api-documentation
-  cd api-documentation
+  git clone gh repo clone ElsonOtake/api-documentation-authentication
+  cd api-documentation-authentication
 ```
 
 ### Install
@@ -149,9 +149,8 @@ To generate the [API documentation](http://localhost:3000/api-docs/index.html):
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Login via API**
-- [ ] **Authentication using token**
-- [ ] **Protected endpoints**
+- [ ] **Authentication using token documentation**
+- [ ] **Documentation using protected endpoints**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
