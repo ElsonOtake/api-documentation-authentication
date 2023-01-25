@@ -134,6 +134,10 @@ describe 'Users' do
         run_test!
       end
 
+      response '401', 'Unauthorized' do
+        run_test!
+      end
+
       response '404', 'Not Found' do
         run_test!
       end
